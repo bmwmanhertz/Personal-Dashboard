@@ -1,0 +1,164 @@
+:root {
+  --hintergrund: #10141c;
+  --kachel: #1b2130;
+  --rand: #2b3345;
+  --text: #e8ecf4;
+  --text-leise: #9aa5b8;
+  --akzent: #5b9dff;
+  --erledigt: #6f7c92;
+  --abstand: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: var(--abstand);
+  background: var(--hintergrund);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: var(--abstand);
+}
+
+.kopf h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.status {
+  margin: 0;
+  color: var(--text-leise);
+  font-size: 0.9rem;
+}
+
+.status.fehler {
+  color: #ff8080;
+}
+
+.raster {
+  display: grid;
+  gap: var(--abstand);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.widget {
+  background: var(--kachel);
+  border: 1px solid var(--rand);
+  border-radius: 12px;
+  padding: var(--abstand);
+}
+
+.widget h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: var(--text-leise);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.uhr {
+  margin: 0;
+  font-size: 2.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.datum,
+.wetter {
+  margin: 0.25rem 0 0;
+  color: var(--text-leise);
+}
+
+.formular {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.formular input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem;
+  border: 1px solid var(--rand);
+  border-radius: 8px;
+  background: var(--hintergrund);
+  color: var(--text);
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rand);
+  border-radius: 8px;
+  background: var(--akzent);
+  color: #0b1020;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.leise {
+  background: transparent;
+  color: var(--text-leise);
+  font-weight: 400;
+}
+
+button.leise:hover {
+  color: var(--text);
+}
+
+.liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.eintrag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--rand);
+  border-radius: 8px;
+}
+
+.eintrag .titel {
+  flex: 1;
+  word-break: break-word;
+}
+
+.eintrag.erledigt .titel {
+  color: var(--erledigt);
+  text-decoration: line-through;
+}
+
+.zaehler {
+  margin: 0.75rem 0 0;
+  color: var(--text-leise);
+  font-size: 0.9rem;
+}
+
+.leer {
+  color: var(--text-leise);
+  font-style: italic;
+}
+
+/* Nur für Screenreader sichtbar */
+.versteckt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

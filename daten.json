@@ -1,0 +1,9 @@
+{
+  "aufgaben": [
+    { "id": "a1", "titel": "Onboarding-Dokument lesen", "erledigt": false },
+    { "id": "a2", "titel": "Copilot in VS Code anmelden", "erledigt": true }
+  ],
+  "notizen": [
+    { "id": "n1", "text": "Dashboard-Projekt aufsetzen und Server starten" }
+  ]
+}

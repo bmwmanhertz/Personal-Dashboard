@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="kopf">
+      <h1>Personal Dashboard</h1>
+      <p id="status" class="status" role="status"></p>
+    </header>
+
+    <main class="raster">
+      <!-- Widget: Uhrzeit und Datum -->
+      <section class="widget" id="widget-uhr">
+        <h2>Uhrzeit</h2>
+        <p id="uhr" class="uhr">--:--:--</p>
+        <p id="datum" class="datum"></p>
+      </section>
+
+      <!-- Widget: Wetter (noch Mock-Daten aus data/wetter.mock.json) -->
+      <section class="widget" id="widget-wetter">
+        <h2>Wetter</h2>
+        <p id="wetter" class="wetter">Lade ...</p>
+      </section>
+
+      <!-- Widget: Aufgaben -->
+      <section class="widget" id="widget-aufgaben">
+        <h2>Aufgaben</h2>
+        <form id="aufgaben-formular" class="formular">
+          <label class="versteckt" for="aufgabe-eingabe">Neue Aufgabe</label>
+          <input
+            id="aufgabe-eingabe"
+            type="text"
+            placeholder="Neue Aufgabe ..."
+            autocomplete="off"
+          />
+          <button type="submit">Hinzufügen</button>
+        </form>
+        <ul id="aufgabenliste" class="liste"></ul>
+        <p id="aufgaben-zaehler" class="zaehler"></p>
+      </section>
+
+      <!-- Widget: Notizen -->
+      <section class="widget" id="widget-notizen">
+        <h2>Notizen</h2>
+        <form id="notizen-formular" class="formular">
+          <label class="versteckt" for="notiz-eingabe">Neue Notiz</label>
+          <input
+            id="notiz-eingabe"
+            type="text"
+            placeholder="Neue Notiz ..."
+            autocomplete="off"
+          />
+          <button type="submit">Hinzufügen</button>
+        </form>
+        <ul id="notizenliste" class="liste"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
